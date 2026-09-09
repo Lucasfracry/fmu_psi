@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Estágio - Turma de Psicologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-card">
+            <div class="avatar-group">
+                <i class="fa-solid fa-users-viewfinder"></i>
+            </div>
+            <h1>Portfólio de Estágio</h1>
+            <p>Turma de Psicologia Clínica &bull; Apresentação Final</p>
+        </header>
+
+        <section class="info-grid">
+            <div class="info-cell">
+                <span class="info-label">Instituição</span>
+                <span class="info-value">FMU</span>
+            </div>
+            <div class="info-cell">
+                <span class="info-label">Matéria</span>
+                <span class="info-value"></span>
+            </div>
+            <div class="info-cell full-width">
+                <span class="info-label">Professor(a) Orientador(a)</span>
+                <span class="info-value"></span>
+            </div>
+            <div class="info-cell full-width">
+                <span class="info-label">Alunos</span>
+                <span class="info-value">Amanda e Equipe </span>
+            </div>
+        </section>
+
+        <nav class="links-wrapper">
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                <span class="link-text">Materiais de Aula</span>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <span class="link-text">Atividades Estudantis</span>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon"><i class="fa-solid fa-users-rays"></i></div>
+                <span class="link-text">Dinâmicas Aplicadas</span>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <span class="link-text">Relatório Final</span>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+        </nav>
+
+        <button class="action-button" onclick="sharePortfolio()">
+            <i class="fa-solid fa-share-nodes"></i>
+            Compartilhar Portfólio
+        </button>
+    </div>
+
+    <div class="toast" id="toastMsg">Link copiado com sucesso!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
