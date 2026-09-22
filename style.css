@@ -1,22 +1,46 @@
+/* ==========================================================================
+   PORTFÓLIO DE ESTÁGIO • PSICOLOGIA FMU
+   Identidade Visual Institucional & Científica
+   ========================================================================== */
+
 :root {
-    --bg-color: #F8F9FA;
-    --text-dark: #1A1D20;
-    --text-light: #5A6268;
-    --academic-blue: #8a1e1e;
-    --card-bg: #FFFFFF;
-    --color-1: #FF6B6B;
-    --color-2: #960000;
-    --color-3: #F9A03F;
-    --color-4: #6B5B95;
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-    --shadow-md: 0 8px 24px rgba(30, 58, 138, 0.08);
-    --shadow-hover: 0 12px 32px rgba(30, 58, 138, 0.15);
-    --radius-lg: 24px;
-    --radius-md: 16px;
-    --radius-sm: 12px;
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Paleta Institucional FMU & Acadêmica */
+    --fmu-burgundy: #7A1315;         /* Bordô oficial da FMU */
+    --fmu-burgundy-light: #9B1B1E;   /* Tom de realce */
+    --fmu-burgundy-dark: #52090B;    /* Bordô profundo para contraste */
+    --fmu-burgundy-soft: rgba(122, 19, 21, 0.08);
+
+    --academic-gold: #C59B27;        /* Dourado acadêmico para detalhes */
+    --academic-gold-soft: rgba(197, 155, 39, 0.12);
+
+    --bg-page: #F6F7F9;              /* Off-white estilo papel acadêmico */
+    --card-bg: #FFFFFF;              /* Superfície limpa de leitura */
+    --card-hover: #FCFDFD;
+
+    --text-primary: #1A1F26;        /* Grafite escuro de alta legibilidade */
+    --text-secondary: #4A5568;      /* Cinza intermediário para descrições */
+    --text-muted: #718096;          /* Cinza claro para metadados e legendas */
+
+    --border-subtle: #E2E8F0;
+    --border-card: #E5E9F0;
+    --border-focus: #7A1315;
+
+    --shadow-subtle: 0 2px 6px rgba(15, 23, 42, 0.04);
+    --shadow-card: 0 4px 18px rgba(26, 31, 38, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 10px 28px rgba(122, 19, 21, 0.12), 0 3px 8px rgba(0, 0, 0, 0.04);
+
+    --radius-xl: 18px;
+    --radius-lg: 14px;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+    --radius-pill: 9999px;
+
+    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* --------------------------------------------------------------------------
+   RESET & TIPOGRAFIA GERAL
+   -------------------------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -25,248 +49,430 @@
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding: 2rem 1.25rem 4rem;
-    line-height: 1.5;
+    padding: 2.5rem 1.25rem 4rem;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Faixa superior institucional com efeito de profundidade */
 body::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 35vh;
-    background: linear-gradient(135deg, var(--academic-blue) 0%, #3B82F6 100%);
+    height: 280px;
+    background: linear-gradient(145deg, var(--fmu-burgundy-dark) 0%, var(--fmu-burgundy) 55%, #8E1619 100%);
     z-index: -1;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom: 3px solid var(--academic-gold);
+    box-shadow: 0 6px 20px rgba(82, 9, 11, 0.3);
 }
 
+/* Marca d'água sutil de fundo para dar tom científico */
+body::after {
+    content: 'Ψ';
+    position: fixed;
+    bottom: -80px;
+    right: -40px;
+    font-family: 'Lora', serif;
+    font-size: 32rem;
+    font-weight: 400;
+    color: rgba(122, 19, 21, 0.025);
+    z-index: -1;
+    pointer-events: none;
+    line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   ESTRUTURA PRINCIPAL (RESPONSIVA)
+   -------------------------------------------------------------------------- */
 .container {
     width: 100%;
-    max-width: 520px;
+    max-width: 900px; /* Expandido para desktop: leitura confortável e ampla */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    margin: 0 auto;
 }
 
+/* --------------------------------------------------------------------------
+   CABEÇALHO ACADÊMICO
+   -------------------------------------------------------------------------- */
 .header-card {
     background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem 2rem;
+    border-radius: var(--radius-xl);
+    padding: 3.25rem 2rem 2.25rem;
     text-align: center;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-card);
     position: relative;
-    margin-top: 4rem;
-    animation: slideUpFade 0.6s ease-out forwards;
+    margin-top: 3.5rem;
+    animation: fadeInSlideUp 0.6s ease-out forwards;
 }
 
+/* Avatar / Selo da Psicologia com o símbolo Psi (Ψ) */
 .avatar-group {
     position: absolute;
     top: -3.5rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 105px;
+    height: 105px;
     background: var(--card-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(82, 9, 11, 0.22);
     border: 4px solid var(--card-bg);
+    outline: 2px solid var(--academic-gold);
+    outline-offset: -2px;
 }
 
-.avatar-group i {
-    font-size: 3rem;
-    color: var(--academic-blue);
-    background: -webkit-linear-gradient(135deg, var(--color-2), var(--academic-blue));
+.avatar-symbol {
+    font-family: 'Lora', 'Georgia', serif;
+    font-size: 3.25rem;
+    font-weight: 600;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--fmu-burgundy-dark), var(--fmu-burgundy));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    user-select: none;
+    margin-top: -3px;
+}
+
+/* Badge Institucional do Topo */
+.academic-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--fmu-burgundy-soft);
+    color: var(--fmu-burgundy);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(122, 19, 21, 0.15);
+}
+
+.academic-badge i {
+    color: var(--academic-gold);
+    font-size: 0.9rem;
 }
 
 .header-card h1 {
-    font-family: 'Lora', serif;
+    font-family: 'Lora', 'Georgia', serif;
     font-weight: 600;
-    font-size: 1.75rem;
-    color: var(--academic-blue);
-    margin-bottom: 0.5rem;
+    font-size: 2.1rem;
+    color: var(--fmu-burgundy);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
 }
 
-.header-card p {
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 300;
+.header-card .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
+/* --------------------------------------------------------------------------
+   GRADE DE METADADOS ACADÊMICOS (FICHA TÉCNICA)
+   -------------------------------------------------------------------------- */
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em desktop */
+    gap: 1.25rem;
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 1.75rem 2rem;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    animation: slideUpFade 0.7s ease-out forwards;
-    opacity: 0;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--fmu-burgundy);
+    animation: fadeInSlideUp 0.7s ease-out forwards;
 }
 
 .info-cell {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-}
-
-.info-cell.full-width {
-    grid-column: 1 / -1;
-    border-top: 1px solid #EEF2F5;
-    padding-top: 1rem;
-    margin-top: 0.25rem;
+    gap: 0.35rem;
 }
 
 .info-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-light);
+    color: var(--text-muted);
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.info-label i {
+    color: var(--academic-gold);
+    font-size: 0.75rem;
 }
 
 .info-value {
-    font-family: 'Lora', serif;
-    font-size: 1.05rem;
-    color: var(--text-dark);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.98rem;
+    color: var(--text-primary);
     font-weight: 500;
+    line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO DE MATERIAIS & DOCUMENTOS DO ESTÁGIO
+   -------------------------------------------------------------------------- */
+.section-title {
+    font-family: 'Lora', 'Georgia', serif;
+    font-size: 1.25rem;
+    color: var(--fmu-burgundy-dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: -0.25rem;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-subtle);
 }
 
 .links-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas harmoniosas no Desktop */
+    gap: 1.25rem;
 }
 
+/* Card Acadêmico de Documento / Link */
 .link-item {
     display: flex;
     align-items: center;
     background: var(--card-bg);
-    padding: 1.25rem;
-    border-radius: var(--radius-md);
+    padding: 1.35rem 1.4rem;
+    border-radius: var(--radius-lg);
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-card);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-    animation: slideUpFade 0.8s ease-out forwards;
+    gap: 1.2rem;
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+/* Borda sutil de destaque no hover */
+.link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--fmu-burgundy);
     opacity: 0;
-}
-
-.link-item:nth-child(1) { animation-delay: 0.1s; }
-.link-item:nth-child(2) { animation-delay: 0.2s; }
-.link-item:nth-child(3) { animation-delay: 0.3s; }
-.link-item:nth-child(4) { animation-delay: 0.4s; }
-
-.link-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1.25rem;
-    font-size: 1.25rem;
     transition: var(--transition);
 }
 
-.link-item:nth-child(1) .link-icon { background: rgba(78, 205, 196, 0.15); color: var(--color-2); }
-.link-item:nth-child(2) .link-icon { background: rgba(255, 107, 107, 0.15); color: var(--color-1); }
-.link-item:nth-child(3) .link-icon { background: rgba(249, 160, 63, 0.15); color: var(--color-3); }
-.link-item:nth-child(4) .link-icon { background: rgba(107, 91, 149, 0.15); color: var(--color-4); }
-
-.link-text {
-    flex-grow: 1;
-    font-size: 1.05rem;
-}
-
-.link-arrow {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    transition: var(--transition);
+.link-item:hover::before {
+    opacity: 1;
 }
 
 .link-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
+    border-color: rgba(122, 19, 21, 0.25);
+    background: var(--card-hover);
 }
 
-.link-item:hover .link-icon {
-    transform: scale(1.1);
+/* Ícone de cada documento acadêmico */
+.link-icon-box {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    background: var(--fmu-burgundy-soft);
+    border: 1px solid rgba(122, 19, 21, 0.12);
+    color: var(--fmu-burgundy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    transition: var(--transition);
 }
 
-.link-item:hover .link-arrow {
+.link-item:hover .link-icon-box {
+    background: var(--fmu-burgundy);
+    color: #FFFFFF;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(122, 19, 21, 0.25);
+}
+
+/* Conteúdo textual do documento */
+.link-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.link-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--academic-gold);
+    display: inline-block;
+}
+
+.link-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.link-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-action {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    padding-left: 0.25rem;
+}
+
+.link-item:hover .link-action {
+    color: var(--fmu-burgundy);
     transform: translateX(4px);
-    color: var(--academic-blue);
+}
+
+/* --------------------------------------------------------------------------
+   BOTÕES DE AÇÃO & COMPARTILHAMENTO
+   -------------------------------------------------------------------------- */
+.action-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .action-button {
-    margin-top: 1rem;
-    background: var(--card-bg);
-    color: var(--academic-blue);
-    border: 2px solid var(--academic-blue);
-    padding: 1rem;
-    border-radius: var(--radius-lg);
+    background: var(--fmu-burgundy);
+    color: #FFFFFF;
+    border: none;
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-pill);
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.98rem;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     transition: var(--transition);
-    animation: slideUpFade 0.9s ease-out forwards;
-    opacity: 0;
-    animation-delay: 0.5s;
+    box-shadow: 0 4px 14px rgba(122, 19, 21, 0.25);
+    outline: none;
+}
+
+.action-button i {
+    font-size: 1.05rem;
+    color: var(--academic-gold);
 }
 
 .action-button:hover {
-    background: var(--academic-blue);
-    color: #FFFFFF;
-    box-shadow: var(--shadow-hover);
+    background: var(--fmu-burgundy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 19, 21, 0.35);
 }
 
+.action-button:active {
+    transform: translateY(0);
+}
+
+/* Rodapé Acadêmico Institucional */
+.institutional-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.institutional-footer p {
+    margin-bottom: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   NOTIFICAÇÃO TOAST
+   -------------------------------------------------------------------------- */
 .toast {
     position: fixed;
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--academic-blue);
+    background: #1E293B;
     color: #FFFFFF;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-pill);
     font-size: 0.9rem;
     font-weight: 500;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1000;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.toast i {
+    color: #22C55E; /* Verde sucesso */
+    font-size: 1rem;
 }
 
 .toast.show {
     bottom: 30px;
 }
 
-@keyframes slideUpFade {
+/* --------------------------------------------------------------------------
+   ANIMAÇÃO DE ENTRADA SUAVE
+   -------------------------------------------------------------------------- */
+@keyframes fadeInSlideUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(22px);
     }
     to {
         opacity: 1;
@@ -274,13 +480,88 @@ body::before {
     }
 }
 
-@media (max-width: 480px) {
-    .info-grid {
-        grid-template-columns: 1fr;
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE (TABLETS E CELULARES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+    .container {
+        max-width: 640px;
     }
-    .info-cell.full-width {
-        border-top: none;
-        padding-top: 0;
-        margin-top: 0;
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 em tablets */
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .links-wrapper {
+        grid-template-columns: 1fr; /* Coluna única em telas intermediárias */
+    }
+
+    .header-card h1 {
+        font-size: 1.85rem;
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    body::before {
+        height: 220px;
+    }
+
+    .header-card {
+        padding: 2.75rem 1.25rem 1.75rem;
+        margin-top: 2.75rem;
+    }
+
+    .avatar-group {
+        width: 90px;
+        height: 90px;
+        top: -3rem;
+    }
+
+    .avatar-symbol {
+        font-size: 2.75rem;
+    }
+
+    .header-card h1 {
+        font-size: 1.55rem;
+    }
+
+    .header-card .subtitle {
+        font-size: 0.92rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* 1 coluna em smartphones */
+        gap: 0.9rem;
+        padding: 1.25rem;
+    }
+
+    .link-item {
+        padding: 1.1rem 1.15rem;
+        gap: 0.9rem;
+    }
+
+    .link-icon-box {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .link-title {
+        font-size: 0.98rem;
+    }
+
+    .link-desc {
+        font-size: 0.78rem;
+    }
+
+    .action-button {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
     }
 }

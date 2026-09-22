@@ -3,73 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Estágio - Turma de Psicologia</title>
+    <title>Mostra de Estágio • Psicologia FMU</title>
+    
+    <!-- Metatags para Redes Sociais & Compartilhamento (WhatsApp, LinkedIn) -->
+    <meta name="description" content="Portfólio acadêmico da Mostra de Estágio Supervisionado em Psicologia Clínica do Centro Universitário FMU.">
+    <meta property="og:title" content="Mostra de Estágio • Psicologia Clínica FMU">
+    <meta property="og:description" content="Acesse o portfólio acadêmico com materiais didáticos, dinâmicas aplicadas e o relatório final de estágio.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#7A1315">
+
+    <!-- Tipografia Editorial & Acadêmica -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilo Customizado FMU -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
+        <!-- Cabeçalho Acadêmico / Dossiê -->
         <header class="header-card">
-            <div class="avatar-group">
-                <i class="fa-solid fa-users-viewfinder"></i>
+            <!-- Símbolo da Psicologia (Psi - Ψ) com selo acadêmico -->
+            <div class="avatar-group" title="Símbolo Oficial da Psicologia">
+                <span class="avatar-symbol">Ψ</span>
             </div>
-            <h1>Mostra de Estágio</h1>
-            <p>Turma de Psicologia Clínica &bull; Apresentação Final</p>
+
+            <div class="academic-badge">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Centro Universitário FMU &bull; Curso de Psicologia
+            </div>
+
+            <h1>Mostra de Estágio Supervisionado</h1>
+            <p class="subtitle">Turma de Psicologia Clínica &bull; Painel de Apresentação e Documentação Técnica</p>
         </header>
 
-        <section class="info-grid">
+        <!-- Ficha Técnica / Metadados Acadêmicos -->
+        <section class="info-grid" aria-label="Informações Acadêmicas do Estágio">
             <div class="info-cell">
-                <span class="info-label">Instituição</span>
-                <span class="info-value">FMU</span>
+                <span class="info-label"><i class="fa-solid fa-building-columns"></i> Instituição</span>
+                <span class="info-value">FMU &ndash; Laureate / Ânima</span>
             </div>
             <div class="info-cell">
-                <span class="info-label">Matéria</span>
-                <span class="info-value"></span>
+                <span class="info-label"><i class="fa-solid fa-book-bookmark"></i> Disciplina</span>
+                <span class="info-value">Estágio Básico / Específico</span>
             </div>
-            <div class="info-cell full-width">
-                <span class="info-label">Professor(a) Orientador(a)</span>
-                <span class="info-value"></span>
+            <div class="info-cell">
+                <span class="info-label"><i class="fa-solid fa-chalkboard-user"></i> Orientação Docente</span>
+                <span class="info-value">Prof(a). Orientador(a)</span>
             </div>
-            <div class="info-cell full-width">
-                <span class="info-label">Alunos</span>
-                <span class="info-value">Amanda e Equipe </span>
+            <div class="info-cell">
+                <span class="info-label"><i class="fa-solid fa-users"></i> Discentes / Equipe</span>
+                <span class="info-value">Amanda e Equipe</span>
             </div>
         </section>
 
-        <nav class="links-wrapper">
-            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fa-solid fa-book-open-reader"></i></div>
-                <span class="link-text">Materiais de Aula</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+        <!-- Seção de Documentos & Produções do Estágio -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-folder-open"></i>
+            Documentos &amp; Acervo do Estágio
+        </h2>
+
+        <nav class="links-wrapper" aria-label="Materiais do Estágio">
+            <!-- Item 1: Materiais de Aula -->
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer" aria-label="Acessar Materiais de Aula (abre em nova aba)">
+                <div class="link-icon-box">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-tag">Material Didático</span>
+                    <span class="link-title">Materiais de Aula &amp; Teoria</span>
+                    <span class="link-desc">Slides, bibliografias e fichamentos teóricos</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-action"></i>
             </a>
-            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                <span class="link-text">Atividades Estudantis</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+
+            <!-- Item 2: Atividades Estudantis -->
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer" aria-label="Acessar Atividades Estudantis (abre em nova aba)">
+                <div class="link-icon-box">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-tag">Prática Acadêmica</span>
+                    <span class="link-title">Atividades Estudantis</span>
+                    <span class="link-desc">Registros de intervenção e exercícios práticos</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-action"></i>
             </a>
-            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fa-solid fa-users-rays"></i></div>
-                <span class="link-text">Dinâmicas Aplicadas</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+
+            <!-- Item 3: Dinâmicas Aplicadas -->
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer" aria-label="Acessar Dinâmicas Aplicadas (abre em nova aba)">
+                <div class="link-icon-box">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-tag">Metodologia</span>
+                    <span class="link-title">Dinâmicas Aplicadas</span>
+                    <span class="link-desc">Protocolos de grupo e técnicas psicológicas</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-action"></i>
             </a>
-            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fa-solid fa-file-signature"></i></div>
-                <span class="link-text">Relatório Final</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+
+            <!-- Item 4: Relatório Final -->
+            <a href="#" class="link-item" target="_blank" rel="noopener noreferrer" aria-label="Acessar Relatório Final (abre em nova aba)">
+                <div class="link-icon-box">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-tag">Produção Conclusiva</span>
+                    <span class="link-title">Relatório Final de Estágio</span>
+                    <span class="link-desc">Dossiê completo, análise de caso e conclusão</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-action"></i>
             </a>
         </nav>
 
-        <button class="action-button" onclick="sharePortfolio()">
-            <i class="fa-solid fa-share-nodes"></i>
-            Compartilhar Portfólio
-        </button>
+        <!-- Painel de Compartilhamento -->
+        <div class="action-panel">
+            <button class="action-button" id="shareBtn" type="button" aria-label="Compartilhar portfólio de estágio">
+                <i class="fa-solid fa-share-nodes"></i>
+                Compartilhar Portfólio
+            </button>
+        </div>
+
+        <!-- Rodapé Institucional -->
+        <footer class="institutional-footer">
+            <p><strong>FMU &bull; Escola de Ciências da Saúde</strong></p>
+            <p>Curso de Bacharelado em Psicologia &bull; Mostra Acadêmica de Estágio</p>
+        </footer>
+    </main>
+
+    <!-- Notificação Flutuante (Toast) -->
+    <div class="toast" id="toastMsg" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Link do portfólio copiado com sucesso!</span>
     </div>
 
-    <div class="toast" id="toastMsg">Link copiado com sucesso!</div>
-
+    <!-- Script de Interação -->
     <script src="script.js"></script>
 </body>
 </html>
